@@ -1,0 +1,30 @@
+@import 'config/normalize';
+
+*, *::before, ::after {
+    box-sizing: border-box;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    font: inherit;
+}
+
+body {
+    min-height: 100vh;
+    background-color: #ffffff;
+    color: #0bf3f3;
+    font-family: Noto Sans SC,sans-serif;
+    font-size: 1.6rem;
+    font-weight: 400;
+    overflow-x: hidden;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+img, picture, svg, video {
+    display: block;
+    max-width: 100%;
+}
+
