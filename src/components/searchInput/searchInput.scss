@@ -1,0 +1,35 @@
+@import "../../styles/global.scss";
+
+.search-input--wrapper {
+  width: 100%;
+  position: relative;
+  display: flex;
+  align-items: center;
+
+  .search-input {
+    width: 100%;
+    border-radius: 2rem;
+    border: 1px solid $grey;
+    padding: 0.5rem 1rem;
+    font-size: 0.875rem;
+
+    @media (max-width: $break-medium) {
+      border: none;
+      padding: 0.25rem 1rem;
+      font-size: 1.25rem;
+      height: 3rem;
+      box-shadow: rgba(0, 0, 0, 0.2) 0px 0.1rem 0.3rem;
+    }
+  }
+
+  .search-input--button {
+    position: absolute;
+    right: 1rem;
+    background-color: transparent;
+    border: none;
+
+    img {
+      width: 1.25rem;
+    }
+  }
+}
