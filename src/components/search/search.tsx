@@ -1,21 +1,26 @@
-import { useContext } from "react";
+import { useContext, useEffect } from "react";
 import { SearchContext } from "../../contexts/searchContext";
-import ProductCard from "../productCard/productCard";
+import ProductCard, { ProductType } from "../productCard/productCard";
 import SearchFilters from "../searchFilters/searchFilters";
+import Header from "../header/header";
+import SearchInput from "../searchInput/searchInput";
+
 import searchImage from "/images/search.svg";
 import filterIcon from "../../assets/filter-icon.svg";
 
-import Header from "../header/header";
-import SearchInput from "../searchInput/searchInput";
-import { ProductType } from "../productCard/productCard";
+import productsData from "../../../productsCategory.json";
 import "./search.scss";
 
-type SearchPropType = {
-  products: ProductType[];
-};
+const Search = () => {
+  const { searchProducts, setIsFiltersOpen, setAllProducts } =
+    useContext(SearchContext);
 
-const Search = ({ products }: SearchPropType) => {
-  const { setIsFiltersOpen } = useContext(SearchContext);
+  useEffect(() => {
+    const products: ProductType[] = productsData.data.nodes;
+
+    setAllProducts(products);
+  }, [setAllProducts]);
+
   return (
     <section className="search__container">
       <figure className="search__image">
@@ -34,11 +39,11 @@ const Search = ({ products }: SearchPropType) => {
         <SearchInput />
       </section>
 
-      <SearchFilters products={products} />
+      <SearchFilters products={searchProducts} />
 
       <main>
         <div className="search-products__container">
-          {products.map((product) => {
+          {searchProducts.map((product) => {
             return <ProductCard key={product.id} product={product} />;
           })}
         </div>
