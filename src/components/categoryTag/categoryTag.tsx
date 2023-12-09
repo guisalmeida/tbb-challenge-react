@@ -5,7 +5,7 @@ type CategoryTagType = {
   category: string;
 };
 
-const categoryTag = ({ category }: CategoryTagType) => {
+const CategoryTag = ({ category }: CategoryTagType) => {
   return (
     <button
       type="button"
@@ -19,4 +19,4 @@ const categoryTag = ({ category }: CategoryTagType) => {
   );
 };
 
-export default categoryTag;
+export default CategoryTag;

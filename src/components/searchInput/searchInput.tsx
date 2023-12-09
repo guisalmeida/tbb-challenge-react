@@ -1,7 +1,7 @@
 import "./searchInput.scss";
 import searchIcon from "../../assets/search-icon.svg";
 
-const searchInput = () => {
+const SearchInput = () => {
   return (
     <div className="search-input--wrapper">
       <input className="search-input" type="text" placeholder="Busque aqui" />
@@ -12,4 +12,4 @@ const searchInput = () => {
   );
 };
 
-export default searchInput;
+export default SearchInput;

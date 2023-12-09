@@ -3,7 +3,7 @@ import SearchInput from '../searchInput/searchInput'
 import searchImage from "/images/search.svg";
 import './header.scss'
 
-const header = () => {
+const Header = () => {
   return (
     <header className="search-header__container">
         <figure className="search-header__image">
@@ -25,4 +25,4 @@ const header = () => {
   )
 }
 
-export default header
+export default Header

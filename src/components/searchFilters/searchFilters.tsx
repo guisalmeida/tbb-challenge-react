@@ -11,7 +11,7 @@ type FiltersPropType = {
   products: ProductType[];
 };
 
-const Filters = ({ products }: FiltersPropType) => {
+const SearchFilters = ({ products }: FiltersPropType) => {
   const { isFiltersOpen, setIsFiltersOpen } = useContext(SearchContext);
 
   return (
@@ -61,4 +61,4 @@ const Filters = ({ products }: FiltersPropType) => {
   );
 };
 
-export default Filters;
+export default SearchFilters;

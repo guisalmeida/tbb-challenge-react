@@ -1,7 +1,7 @@
 import { useContext } from "react";
 import { SearchContext } from "../../contexts/searchContext";
 import ProductCard from "../productCard/productCard";
-import Filters from "../searchFilters/searchFilters";
+import SearchFilters from "../searchFilters/searchFilters";
 import searchImage from "/images/search.svg";
 import filterIcon from "../../assets/filter-icon.svg";
 
@@ -34,7 +34,7 @@ const Search = ({ products }: SearchPropType) => {
         <SearchInput />
       </section>
 
-      <Filters products={products} />
+      <SearchFilters products={products} />
 
       <main>
         <div className="search-products__container">

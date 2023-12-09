@@ -21,7 +21,7 @@ type ProductCardPropType = {
   product: ProductType;
 };
 
-const productCard = ({ product }: ProductCardPropType) => {
+const ProductCard = ({ product }: ProductCardPropType) => {
   return (
     <div className="product-card__container">
       <button
@@ -44,4 +44,4 @@ const productCard = ({ product }: ProductCardPropType) => {
   );
 };
 
-export default productCard;
+export default ProductCard;
