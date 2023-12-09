@@ -1,10 +1,12 @@
 import Search from "./components/search/search";
 import "./styles/global.scss";
 
+import productsData from '../productsCategory.json'
+
 function App() {
   return (
     <>
-      <Search />
+      <Search products={productsData.data.nodes}/>
     </>
   );
 }

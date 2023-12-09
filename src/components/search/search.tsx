@@ -5,9 +5,14 @@ import filterIcon from "../../assets/filter-icon.svg";
 
 import Header from "../header/header";
 import SearchInput from "../searchInput/searchInput";
+import { ProductType } from "../productCard/productCard";
 import "./search.scss";
 
-const search = () => {
+type SearchPropType = {
+  products: ProductType[];
+};
+
+const search = ({ products }: SearchPropType) => {
   return (
     <section className="search__container">
       <figure className="search__image">
@@ -23,17 +28,13 @@ const search = () => {
         <SearchInput />
       </section>
 
-      <Filters />
+      <Filters products={products} />
 
       <main>
         <div className="search-products__container">
-          <ProductCard />
-          <ProductCard />
-          <ProductCard />
-          <ProductCard />
-          <ProductCard />
-          <ProductCard />
-          <ProductCard />
+          {products.map((product) => {
+            return <ProductCard key={product.id} product={product} />;
+          })}
         </div>
       </main>
     </section>

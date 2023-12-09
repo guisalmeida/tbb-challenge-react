@@ -1,10 +1,17 @@
 import CategoryTag from "../categoryTag/categoryTag";
+import { ProductType } from "../productCard/productCard";
 import closeIcon from "../../assets/close-icon.svg";
 import "./searchFilters.scss";
 
-const filters = () => {
+type FiltersPropType = {
+  products: ProductType[];
+};
+
+const Filters = ({ products }: FiltersPropType) => {
   return (
-    <aside className="search-filters__container">
+    <aside
+      className="search-filters__container"
+    >
       <button
         type="button"
         className="search-filters__close-button"
@@ -20,7 +27,7 @@ const filters = () => {
       </h2>
 
       <div className="search-filters__tags">
-        <CategoryTag category="teste" />
+        <CategoryTag category="Favoritos" />
         <CategoryTag category="testeteste" />
         <CategoryTag category="testeteste" />
         <CategoryTag category="teste" />
@@ -33,14 +40,18 @@ const filters = () => {
             <input type="checkbox" id="favorites" name="favorites" />
             <label htmlFor="favorites">Favoritos (0)</label>
           </li>
-          <li>
-            <input type="checkbox" id="category2" name="category2" />
-            <label htmlFor="category2">category2 (33)</label>
-          </li>
+          {products.map((product) => {
+            return (
+              <li key={product.id}>
+                <input type="checkbox" id="category2" name="category2" />
+                <label htmlFor="category2">{product.category.name} (33)</label>
+              </li>
+            );
+          })}
         </ul>
       </nav>
     </aside>
   );
 };
 
-export default filters;
+export default Filters;
