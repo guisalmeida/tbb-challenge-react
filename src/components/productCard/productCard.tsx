@@ -4,7 +4,7 @@ import heartIcon from "../../assets/heart-icon.svg";
 const productCard = () => {
   return (
     <div className="product-card__container">
-      <button className="product-card__favorite" aria-label="Favorite">
+      <button className="product-card__favorite" aria-label="Botão favoritos" type="button">
         <img src={heartIcon} alt="Heart icon" className="heart-icon" />
       </button>
       <figure className="product-card__image">
