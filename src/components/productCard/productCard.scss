@@ -6,17 +6,17 @@
   justify-content: center;
   flex-direction: column;
   position: relative;
-  width: calc(100% - 2rem);
+  width: 100%;
   max-width: $break-small;
   background-color: $white;
   color: $black;
   text-align: center;
   font-size: 0.875rem;
   padding: 1rem;
-  margin: 1rem;
-  border-radius: 0.5rem;
+  margin: 0;
+  border-radius: 1rem;
   overflow: hidden;
-  box-shadow: rgba(0, 0, 0, 0.1) 0px 0.1rem 0.5rem;
+  box-shadow: rgba(0, 0, 0, 0.2) 0px 0.1rem 0.3rem;
   transition: all 0.3s ease;
 
   @media (hover: hover) {
@@ -66,6 +66,10 @@
 
     &.active {
         background-color: $highlight;
+    }
+
+    img {
+      width: 1rem;
     }
   }
 }
