@@ -1,3 +1,5 @@
+import { useContext } from "react";
+import { SearchContext } from "../../contexts/searchContext";
 import ProductCard from "../productCard/productCard";
 import Filters from "../searchFilters/searchFilters";
 import searchImage from "/images/search.svg";
@@ -12,7 +14,8 @@ type SearchPropType = {
   products: ProductType[];
 };
 
-const search = ({ products }: SearchPropType) => {
+const Search = ({ products }: SearchPropType) => {
+  const { setIsFiltersOpen } = useContext(SearchContext);
   return (
     <section className="search__container">
       <figure className="search__image">
@@ -22,7 +25,10 @@ const search = ({ products }: SearchPropType) => {
       <Header />
 
       <section className="search-input--mobile">
-        <button className="search-input__button">
+        <button
+          className="search-input__button"
+          onClick={() => setIsFiltersOpen(true)}
+        >
           <img src={filterIcon} alt="Filter icon" />
         </button>
         <SearchInput />
@@ -41,4 +47,4 @@ const search = ({ products }: SearchPropType) => {
   );
 };
 
-export default search;
+export default Search;

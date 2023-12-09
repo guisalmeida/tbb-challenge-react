@@ -1,5 +1,9 @@
+import { useContext } from "react";
 import CategoryTag from "../categoryTag/categoryTag";
 import { ProductType } from "../productCard/productCard";
+
+import { SearchContext } from "../../contexts/searchContext";
+
 import closeIcon from "../../assets/close-icon.svg";
 import "./searchFilters.scss";
 
@@ -8,15 +12,18 @@ type FiltersPropType = {
 };
 
 const Filters = ({ products }: FiltersPropType) => {
+  const { isFiltersOpen, setIsFiltersOpen } = useContext(SearchContext);
+
   return (
     <aside
-      className="search-filters__container"
+      className={`search-filters__container ${isFiltersOpen ? "open" : ""}`}
     >
       <button
         type="button"
         className="search-filters__close-button"
         title="Fechar Menu"
         aria-label="Fechar Menu"
+        onClick={()=> setIsFiltersOpen(false)}
       >
         <img src={closeIcon} alt="Close icon" />
       </button>
