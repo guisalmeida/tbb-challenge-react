@@ -5,24 +5,23 @@ import searchIcon from "../../assets/search-icon.svg";
 import "./searchInput.scss";
 
 const SearchInput = () => {
-  const { allProducts, setSearchProducts } = useContext(SearchContext);
+  const { allProducts, searchProducts, setQuery, updateCategories } =
+    useContext(SearchContext);
 
   const handleSearch = (event: ChangeEvent<HTMLInputElement>) => {
-    const query = event.target.value.trim();
-    if (query === "") {
-      return setSearchProducts([]);
+    const query = event.target.value.trim().toLowerCase();
+    setQuery(query);
+    if (query.length === 0) {
+      return updateCategories(allProducts);
     }
 
-    const searchProducts = allProducts.filter(({ name }) =>
-      name.toLowerCase().includes(query)
-    );
-
-    return setSearchProducts(searchProducts);
+    return updateCategories(searchProducts);
   };
 
   return (
     <div className="search-input--wrapper">
       <input
+        name="Search input"
         className="search-input"
         type="text"
         placeholder="Busque aqui"

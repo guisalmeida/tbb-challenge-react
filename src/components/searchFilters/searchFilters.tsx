@@ -1,18 +1,27 @@
 import { useContext } from "react";
 import CategoryTag from "../categoryTag/categoryTag";
-import { ProductType } from "../productCard/productCard";
 
 import { SearchContext } from "../../contexts/searchContext";
 
 import closeIcon from "../../assets/close-icon.svg";
 import "./searchFilters.scss";
 
-type FiltersPropType = {
-  products: ProductType[];
-};
+const SearchFilters = () => {
+  const {
+    searchProducts,
+    categories,
+    isFiltersOpen,
+    setCategoriesChecked,
+    setIsFiltersOpen,
+  } = useContext(SearchContext);
 
-const SearchFilters = ({ products }: FiltersPropType) => {
-  const { isFiltersOpen, setIsFiltersOpen } = useContext(SearchContext);
+  const handleChecked = (
+    event: React.ChangeEvent<HTMLInputElement>,
+    id: string
+  ) => {
+    const value: boolean = event.currentTarget.checked;
+    setCategoriesChecked(value, id);
+  };
 
   return (
     <aside
@@ -23,35 +32,43 @@ const SearchFilters = ({ products }: FiltersPropType) => {
         className="search-filters__close-button"
         title="Fechar Menu"
         aria-label="Fechar Menu"
-        onClick={()=> setIsFiltersOpen(false)}
+        onClick={() => setIsFiltersOpen(false)}
       >
         <img src={closeIcon} alt="Close icon" />
       </button>
 
       <h2>
         Filtros
-        <span className="search-filters__results">123 resultados</span>
+        <span className="search-filters__results">
+          {`${searchProducts.length} resultado${
+            searchProducts.length > 1 ? "s" : ""
+          }`}
+        </span>
       </h2>
 
       <div className="search-filters__tags">
-        <CategoryTag category="Favoritos" />
-        <CategoryTag category="testeteste" />
-        <CategoryTag category="testeteste" />
-        <CategoryTag category="teste" />
-        <CategoryTag category="teste" />
+        {categories.map((cat) => {
+          if (cat.checked) {
+            return <CategoryTag key={cat._id} category={cat} />;
+          }
+        })}
       </div>
 
       <nav>
         <ul>
-          <li>
-            <input type="checkbox" id="favorites" name="favorites" />
-            <label htmlFor="favorites">Favoritos (0)</label>
-          </li>
-          {products.map((product) => {
+          {categories.map((category) => {
             return (
-              <li key={product.id}>
-                <input type="checkbox" id="category2" name="category2" />
-                <label htmlFor="category2">{product.category.name} (33)</label>
+              <li key={category._id}>
+                <input
+                  type="checkbox"
+                  checked={category.checked}
+                  id={category._id}
+                  name={category.name}
+                  onChange={(e) => handleChecked(e, category._id)}
+                />
+                <label htmlFor={category._id}>
+                  {category.name} ({category.quantity})
+                </label>
               </li>
             );
           })}

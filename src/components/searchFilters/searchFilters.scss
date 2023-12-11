@@ -5,6 +5,7 @@
   border-radius: 1rem;
   box-shadow: rgba(0, 0, 0, 0.2) 0px 0.1rem 0.3rem;
   padding: 1rem;
+  max-height: 100vh;
 
   @media (max-width: $break-medium) {
     padding: 3rem 1rem 1rem;

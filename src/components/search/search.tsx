@@ -12,14 +12,18 @@ import productsData from "../../../productsCategory.json";
 import "./search.scss";
 
 const Search = () => {
-  const { searchProducts, setIsFiltersOpen, setAllProducts } =
+  const { updateCategories, searchProducts, setIsFiltersOpen, setAllProducts } =
     useContext(SearchContext);
 
   useEffect(() => {
-    const products: ProductType[] = productsData.data.nodes;
+    const fetchProducts = () => {
+      const products: ProductType[] = productsData.data.nodes;
+      setAllProducts(products);
+      updateCategories(products);
+    };
 
-    setAllProducts(products);
-  }, [setAllProducts]);
+    fetchProducts();
+  }, []);
 
   return (
     <section className="search__container">
@@ -39,7 +43,7 @@ const Search = () => {
         <SearchInput />
       </section>
 
-      <SearchFilters products={searchProducts} />
+      <SearchFilters />
 
       <main>
         <div className="search-products__container">
