@@ -5,13 +5,13 @@ import searchIcon from "../../assets/search-icon.svg";
 import "./searchInput.scss";
 
 const SearchInput = () => {
-  const { allProducts, searchProducts, setQuery, updateCategories } =
+  const { query, allProducts, searchProducts, setQuery, updateCategories } =
     useContext(SearchContext);
 
   const handleSearch = (event: ChangeEvent<HTMLInputElement>) => {
-    const query = event.target.value.trim().toLowerCase();
-    setQuery(query);
-    if (query.length === 0) {
+    const newQuery = event.target.value.trim().toLowerCase();
+    setQuery(newQuery);
+    if (newQuery.length === 0) {
       return updateCategories(allProducts);
     }
 
@@ -26,6 +26,7 @@ const SearchInput = () => {
         type="text"
         placeholder="Busque aqui"
         onChange={handleSearch}
+        value={query}
       />
       <button className="search-input--button">
         <img src={searchIcon} alt="Search icon" />
