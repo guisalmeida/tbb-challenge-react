@@ -26,6 +26,7 @@ type SearchContextType = {
   setCategories: Dispatch<SetStateAction<CategoryType[]>>;
   setCategoriesChecked: (bool: boolean, id: string) => void;
   setQuery: Dispatch<SetStateAction<string>>;
+  setFavorite: (bool: boolean, id: string) => void;
   updateCategories: (products: ProductType[]) => void;
 };
 
@@ -41,6 +42,7 @@ export const SearchContext = createContext<SearchContextType>({
   setCategories: () => null,
   setCategoriesChecked: () => null,
   setQuery: () => null,
+  setFavorite: () => null,
   updateCategories: () => null,
 });
 
@@ -53,7 +55,14 @@ export const SearchProvider = ({ children }: SearchProviderPropType) => {
   const [isFiltersOpen, setIsFiltersOpen] = useState(false);
   const [allProducts, setAllProducts] = useState<ProductType[]>([]);
   const [searchProducts, setSearchProducts] = useState<ProductType[]>([]);
-  const [categories, setCategories] = useState<CategoryType[]>([]);
+  const [categories, setCategories] = useState<CategoryType[]>([
+    {
+      name: "Favoritos",
+      _id: "favoritos123",
+      checked: false,
+      quantity: 0,
+    },
+  ]);
 
   const setCategoriesChecked = (bool: boolean, id: string) => {
     const newCategories = categories.map((cat) => {
@@ -65,7 +74,32 @@ export const SearchProvider = ({ children }: SearchProviderPropType) => {
     setCategories(newCategories);
   };
 
-  const updateCategories = (products: ProductType[] = allProducts) => {
+  const setFavorite = (bool: boolean, id: string) => {
+    const newProducts = allProducts.map((prod) => {
+      if (prod.id === id) {
+        prod.favorite = bool;
+      }
+      return prod;
+    });
+
+    const matchingFavoriteProducts = newProducts.filter(
+      (prod) => prod && prod.favorite
+    );
+
+    setCategories((prev) => {
+      const favCat = prev.find(
+        (prevCategory) => prevCategory.name === "Favoritos"
+      );
+      if (favCat) {
+        favCat.quantity = matchingFavoriteProducts.length;
+      }
+      return prev;
+    });
+
+    setAllProducts(newProducts);
+  };
+
+  const updateCategories = (products: ProductType[]) => {
     const existingCats: Set<CategoryType> = new Set();
 
     const updatedCategories = products.reduce(
@@ -99,16 +133,12 @@ export const SearchProvider = ({ children }: SearchProviderPropType) => {
 
     const matchingCategories = Array.from(existingCats);
 
-    // Identify categories in updatedCategories that are not in matchingCategories
-    const categoriesNotInMatching = updatedCategories.filter(
+    const categoriesNotMatching = updatedCategories.filter(
       (cat) => !matchingCategories.some((matchCat) => matchCat._id === cat._id)
     );
 
-    // Set quantity to 0 for categories not in matchingCategories
     const updatedCategoriesWithZeros = updatedCategories.map((cat) =>
-      categoriesNotInMatching.some(
-        (notInMatchCat) => notInMatchCat._id === cat._id
-      )
+      categoriesNotMatching.some((notMatchCat) => notMatchCat._id === cat._id)
         ? { ...cat, quantity: 0 }
         : cat
     );
@@ -131,7 +161,9 @@ export const SearchProvider = ({ children }: SearchProviderPropType) => {
   const filterByCategory = () => {
     const filteredProducts = allProducts.filter((prod) => {
       return categories.some(
-        (cat) => cat._id === prod.category._id && cat.checked
+        (cat) =>
+          (cat._id === prod.category._id && cat.checked) ||
+          (cat._id === "favoritos123" && cat.checked && prod.favorite)
       );
     });
 
@@ -176,6 +208,7 @@ export const SearchProvider = ({ children }: SearchProviderPropType) => {
     setCategoriesChecked,
     setQuery,
     updateCategories,
+    setFavorite,
   };
 
   return (
