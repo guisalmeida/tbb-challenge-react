@@ -71,8 +71,47 @@
     display: flex;
     flex-wrap: wrap;
 
-    @media (min-width: $break-medium){
+    @media (min-width: $break-medium) {
       display: none;
+    }
+  }
+
+  ul {
+    margin: 1rem 0 0;
+
+    li {
+      font-size: 0.875rem;
+      margin: 0 0 0.5rem;
+      display: flex;
+      align-items: center;
+      width: 100%;
+      background-color: $white;
+      padding: 0.25rem 0.5rem;
+      border-radius: 0.5rem;
+      transition: all 0.3s ease;
+
+      @media (hover: hover) {
+        &:hover {
+          color: $white;
+          background-color: $highlight;
+        }
+      }
+
+      label {
+        width: 100%;
+      }
+
+      input {
+        margin: 0 0.5rem 0 0;
+
+        &[type="checkbox"],
+        &[type="checkbox"]:checked {
+          accent-color: $highlight;
+          background-color: $black;
+          color: $white;
+          mix-blend-mode: multiply;
+        }
+      }
     }
   }
 }
