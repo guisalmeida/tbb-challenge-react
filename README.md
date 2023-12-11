@@ -1,30 +1,26 @@
-# React + TypeScript + Vite
+<p align="center">
+  <a href="https://oquevcprocura.netlify.app/" target="_blank">
+    <img alt="Logo" src="./public/images/logo.png" width="400" />
+  </a>
+</p>
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## "O que você está procurando?"  
+A Search Component made with react and typescript.
 
-Currently, two official plugins are available:
+## Layout
+The layout was inspired in the Bento UI Design, which is an aproach about visual hierarchy and organization. It offers a clean, efficient design structure that's visually appealing. Its real power comes from its adaptability to small, rectangular layouts, making it a godsend for mobile-responsive designs.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
 
-## Expanding the ESLint configuration
+<div>
+  <img alt="Logo" src="./public/images/desktop.png" width="500" />
+  <img alt="Logo" src="./public/images/mobile.png" width="96" />
+</div>
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
 
-- Configure the top-level `parserOptions` property like this:
+<!-- ![Desktop](./public/images/desktop.png)
+![Desktop](./public/images/desktop.png) -->
 
-```js
-export default {
-  // other rules...
-  parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-  },
-}
-```
+### Todo (further improvements)
 
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+- [ ] Button load more;
+- [ ] Fixed filters;
