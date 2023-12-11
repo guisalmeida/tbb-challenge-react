@@ -1,4 +1,5 @@
 import {
+  ReactNode,
   Dispatch,
   SetStateAction,
   createContext,
@@ -47,7 +48,7 @@ export const SearchContext = createContext<SearchContextType>({
 });
 
 type SearchProviderPropType = {
-  children: React.ReactNode;
+  children: ReactNode;
 };
 
 export const SearchProvider = ({ children }: SearchProviderPropType) => {
@@ -75,7 +76,7 @@ export const SearchProvider = ({ children }: SearchProviderPropType) => {
   };
 
   const setFavorite = (bool: boolean, id: string) => {
-    const newProducts = allProducts.map((prod) => {
+    const newProducts = searchProducts.map((prod) => {
       if (prod.id === id) {
         prod.favorite = bool;
       }
@@ -96,7 +97,17 @@ export const SearchProvider = ({ children }: SearchProviderPropType) => {
       return prev;
     });
 
-    setAllProducts(newProducts);
+    const isFavChecked = () => {
+      return categories.some(
+        (cat) => cat._id === "favoritos123" && cat.checked
+      );
+    };
+
+    if (isFavChecked()) {
+      return setSearchProducts(matchingFavoriteProducts);
+    }
+
+    return setSearchProducts(newProducts);
   };
 
   const updateCategories = (products: ProductType[]) => {
