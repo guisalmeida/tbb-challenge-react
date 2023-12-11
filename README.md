@@ -12,8 +12,8 @@ The layout was inspired in the Bento UI Design, which is an aproach about visual
 
 
 <div>
-  <img alt="Logo" src="./public/images/desktop.png" width="500" />
-  <img alt="Logo" src="./public/images/mobile.png" width="96" />
+  <img alt="Logo" src="./public/images/desktop.png" width="600" />
+  <img alt="Logo" src="./public/images/mobile.png" width="115" />
 </div>
 
 
