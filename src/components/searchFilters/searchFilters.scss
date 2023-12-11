@@ -107,9 +107,7 @@
         &[type="checkbox"],
         &[type="checkbox"]:checked {
           accent-color: $highlight;
-          background-color: $black;
-          color: $white;
-          mix-blend-mode: multiply;
+          mix-blend-mode: normal;
         }
       }
     }
