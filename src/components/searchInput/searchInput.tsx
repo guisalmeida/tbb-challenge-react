@@ -19,7 +19,7 @@ const SearchInput = () => {
   };
 
   return (
-    <div className="search-input--wrapper">
+    <div className="search-input__wrapper">
       <input
         name="Search input"
         className="search-input"
@@ -28,7 +28,7 @@ const SearchInput = () => {
         onChange={handleSearch}
         value={query}
       />
-      <button className="search-input--button">
+      <button className="search-input__button--search-icon">
         <img src={searchIcon} alt="Search icon" />
       </button>
     </div>
