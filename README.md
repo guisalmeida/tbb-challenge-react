@@ -15,7 +15,8 @@ Explore more details in the [Figma project](https://www.figma.com/file/FkSkyHfMG
 
 <div>
   <img alt="Desktop Preview" src="./public/images/desktop.png" width="600" />
-  <img alt="Mobile Preview" src="./public/images/mobile.png" width="115" />
+  <img alt="Mobile Preview" src="./public/images/mobile1.png" width="115" />
+  <img alt="Mobile Preview" src="./public/images/mobile2.png" width="115" />
 </div>
 
 ## Colaborating  
