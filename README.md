@@ -14,9 +14,8 @@ The layout draws inspiration from the Bento UI Design, focusing on visual hierar
 Explore more details in the [Figma project](https://www.figma.com/file/FkSkyHfMGyH4laPpxs0333/Other-Projects?type=design&node-id=37%3A95&mode=design&t=aN4PU55f7nK6zRuY-1).
 
 <div>
-  <img alt="Desktop Preview" src="./public/images/desktop.png" width="600" />
+  <img alt="Desktop Preview" src="./public/images/newdesktop.png" width="600" />
   <img alt="Mobile Preview" src="./public/images/mobile1.png" width="115" />
-  <img alt="Mobile Preview" src="./public/images/mobile2.png" width="115" />
 </div>
 
 ## Colaborating  
