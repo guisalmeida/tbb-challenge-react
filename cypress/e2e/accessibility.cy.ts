@@ -1,8 +1,7 @@
 /// <reference types="cypress" />
-/* eslint-disable no-undef */
 
 describe("Accessibility tests", () => {
-  it("Test", () => {
+  it("Should log any accessibility failures", () => {
     cy.analyseA11y("/");
   });
 });
