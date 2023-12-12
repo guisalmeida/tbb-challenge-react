@@ -8,7 +8,7 @@ type CategoryTagType = {
 };
 
 const CategoryTag = ({ category }: CategoryTagType) => {
-  const { setCategoriesChecked } = useContext(SearchContext);
+  const { setCategoryChecked } = useContext(SearchContext);
 
   return (
     <button
@@ -16,7 +16,7 @@ const CategoryTag = ({ category }: CategoryTagType) => {
       className="category-tag"
       title="Remover categoria"
       aria-label="Remover categoria"
-      onClick={() => setCategoriesChecked(false, category._id)}
+      onClick={() => setCategoryChecked(false, category._id)}
     >
       {category.name}
       <img src={closeIcon} alt="Close icon" />

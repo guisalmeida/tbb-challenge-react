@@ -1,9 +1,9 @@
+import { useContext } from "react";
+import { SearchContext } from "../../contexts/searchContext";
 import CategoryTag from "../categoryTag/categoryTag";
 import SearchInput from "../searchInput/searchInput";
 import searchImage from "/images/search.svg";
 import "./header.scss";
-import { useContext } from "react";
-import { SearchContext } from "../../contexts/searchContext";
 
 const Header = () => {
   const { categories } = useContext(SearchContext);

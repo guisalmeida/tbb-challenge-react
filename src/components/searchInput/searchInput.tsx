@@ -1,7 +1,7 @@
 import { ChangeEvent, useContext } from "react";
 import { SearchContext } from "../../contexts/searchContext";
-import searchIcon from "../../assets/search-icon.svg";
 
+import searchIcon from "../../assets/search-icon.svg";
 import "./searchInput.scss";
 
 const SearchInput = () => {

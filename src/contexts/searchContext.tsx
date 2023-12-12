@@ -6,7 +6,23 @@ import {
   useEffect,
   useState,
 } from "react";
-import { ProductType } from "../components/productCard/productCard";
+
+export type ProductType = {
+  name: string;
+  shortDescription: string;
+  id: string;
+  images: {
+    alt: string;
+    asset: {
+      url: string;
+    };
+  }[];
+  favorite?: boolean;
+  category: {
+    _id: string;
+    name: string;
+  };
+};
 
 export type CategoryType = {
   name: string;
@@ -25,7 +41,7 @@ type SearchContextType = {
   setSearchProducts: Dispatch<SetStateAction<ProductType[]>>;
   setIsFiltersOpen: Dispatch<SetStateAction<boolean>>;
   setCategories: Dispatch<SetStateAction<CategoryType[]>>;
-  setCategoriesChecked: (bool: boolean, id: string) => void;
+  setCategoryChecked: (bool: boolean, id: string) => void;
   setQuery: Dispatch<SetStateAction<string>>;
   setFavorite: (bool: boolean, id: string) => void;
   updateCategories: (products: ProductType[]) => void;
@@ -41,7 +57,7 @@ export const SearchContext = createContext<SearchContextType>({
   setIsFiltersOpen: () => null,
   setSearchProducts: () => null,
   setCategories: () => null,
-  setCategoriesChecked: () => null,
+  setCategoryChecked: () => null,
   setQuery: () => null,
   setFavorite: () => null,
   updateCategories: () => null,
@@ -65,7 +81,7 @@ export const SearchProvider = ({ children }: SearchProviderPropType) => {
     },
   ]);
 
-  const setCategoriesChecked = (bool: boolean, id: string) => {
+  const setCategoryChecked = (bool: boolean, id: string) => {
     const newCategories = categories.map((cat) => {
       if (cat._id === id) {
         cat.checked = bool;
@@ -73,6 +89,10 @@ export const SearchProvider = ({ children }: SearchProviderPropType) => {
       return cat;
     });
     setCategories(newCategories);
+  };
+
+  const isFavoriteCategoryChecked = () => {
+    return categories.some((cat) => cat._id === "favoritos123" && cat.checked);
   };
 
   const setFavorite = (bool: boolean, id: string) => {
@@ -97,16 +117,9 @@ export const SearchProvider = ({ children }: SearchProviderPropType) => {
       return prev;
     });
 
-    const isFavChecked = () => {
-      return categories.some(
-        (cat) => cat._id === "favoritos123" && cat.checked
-      );
-    };
-
-    if (isFavChecked()) {
+    if (isFavoriteCategoryChecked()) {
       return setSearchProducts(matchingFavoriteProducts);
     }
-
     return setSearchProducts(newProducts);
   };
 
@@ -216,7 +229,7 @@ export const SearchProvider = ({ children }: SearchProviderPropType) => {
     setAllProducts,
     setSearchProducts,
     setCategories,
-    setCategoriesChecked,
+    setCategoryChecked,
     setQuery,
     updateCategories,
     setFavorite,

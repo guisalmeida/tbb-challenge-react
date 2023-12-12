@@ -59,5 +59,26 @@
       grid-column-start: 1;
       grid-column-end: 3;
     }
+
+    .search-products__loading {
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+
+      img {
+        max-width: 20rem;
+
+        @media (max-width: $break-medium) {
+          max-width: 10rem;
+        }
+      }
+
+      p {
+        font-weight: bold;
+        font-size: 1rem;
+      }
+    }
   }
 }

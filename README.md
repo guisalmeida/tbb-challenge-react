@@ -1,6 +1,6 @@
-<div align="center">
+<div align="left">
   <a href="https://oquevcprocura.netlify.app/" target="_blank">
-    <img alt="Logo" src="./public/images/logo.png" width="400" />
+    <img alt="Logo" src="./public/images/search.svg" width="200" />
   </a>
 </div>
 

@@ -1,7 +1,6 @@
 import { useContext } from "react";
-import CategoryTag from "../categoryTag/categoryTag";
-
 import { SearchContext } from "../../contexts/searchContext";
+import CategoryTag from "../categoryTag/categoryTag";
 
 import closeIcon from "../../assets/close-icon.svg";
 import "./searchFilters.scss";
@@ -11,7 +10,7 @@ const SearchFilters = () => {
     searchProducts,
     categories,
     isFiltersOpen,
-    setCategoriesChecked,
+    setCategoryChecked,
     setIsFiltersOpen,
   } = useContext(SearchContext);
 
@@ -20,7 +19,7 @@ const SearchFilters = () => {
     id: string
   ) => {
     const value: boolean = event.currentTarget.checked;
-    setCategoriesChecked(value, id);
+    setCategoryChecked(value, id);
   };
 
   return (

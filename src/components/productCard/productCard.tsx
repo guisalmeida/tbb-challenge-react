@@ -1,24 +1,8 @@
-import "./productCard.scss";
-import heartIcon from "../../assets/heart-icon.svg";
 import { useContext } from "react";
-import { SearchContext } from "../../contexts/searchContext";
+import { SearchContext, ProductType } from "../../contexts/searchContext";
 
-export type ProductType = {
-  name: string;
-  shortDescription: string;
-  id: string;
-  images: {
-    alt: string;
-    asset: {
-      url: string;
-    };
-  }[];
-  favorite?: boolean;
-  category: {
-    _id: string;
-    name: string;
-  };
-};
+import heartIcon from "../../assets/heart-icon.svg";
+import "./productCard.scss";
 
 type ProductCardPropType = {
   product: ProductType;
@@ -35,7 +19,9 @@ const ProductCard = ({ product }: ProductCardPropType) => {
   return (
     <div className="product-card__container">
       <button
-        className={`product-card__favorite ${product?.favorite ? "active" : ""}`}
+        className={`product-card__favorite ${
+          product?.favorite ? "active" : ""
+        }`}
         aria-label="Botão favoritos"
         type="button"
         onClick={handleFavorite}
