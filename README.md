@@ -40,5 +40,8 @@ npm run dev
 
 ### Todo (Upcoming Improvements)
 
+- [x] E2E tests;
+- [x] Accessibility tests;
+- [ ] Component tests;
 - [ ] Button "load more";
 - [ ] Fixed filters when scrolling down;
