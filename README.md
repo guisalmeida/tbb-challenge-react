@@ -6,7 +6,9 @@
 
 ## Welcome to "O que você está procurando?"
 
-This is a dynamic Search Component built with React and TypeScript.
+This is a dynamic Search Component built with React and TypeScript.  
+
+**Live demo**: https://oquevcprocura.netlify.app/
 
 ### Design Inspiration
 The layout draws inspiration from the Bento UI Design, focusing on visual hierarchy and organization. It provides a clean, efficient structure that is visually appealing. Its real strength lies in its adaptability to small, rectangular layouts, making it perfect for mobile-responsive designs.
