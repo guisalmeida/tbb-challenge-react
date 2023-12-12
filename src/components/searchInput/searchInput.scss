@@ -1,6 +1,6 @@
 @import "../../styles/global.scss";
 
-.search-input--wrapper {
+.search-input__wrapper {
   width: 100%;
   position: relative;
   display: flex;
@@ -22,7 +22,7 @@
     }
   }
 
-  .search-input--button {
+  .search-input__button--search-icon {
     position: absolute;
     right: 1rem;
     background-color: transparent;

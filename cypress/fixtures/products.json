@@ -1,0 +1,39 @@
+{
+  "products": [
+    {
+      "name": "Rexona Men Antitranspirante Roll On Invisible 50ml",
+      "shortDescription": "Decile chau a las manchas blancas con Rexona Invisible.",
+      "id": "-ed429aa9-e815-5d1b-966d-403fc8177fac",
+      "images": [
+        {
+          "alt": "Envase de desodorante Rexona Men Antitranspirante Roll On Invisible 50ml",
+          "asset": {
+            "url": "https://cdn.sanity.io/images/27438tds/rexona-staging-ar/2d63d02809567b152afc3d57b091797f3b62c05c-5000x5000.tif?w=386&h=386&q=80&auto=format"
+          }
+        }
+      ],
+      "category": {
+        "_id": "88c47f2a01531fb5e5b25963d54e433becafd55ae72157e86256bf29",
+        "name": "Roll On"
+      },
+      "favorite": true
+    },
+    {
+      "name": "Rexona Alcohol en Gel Sin Perfume 300ml",
+      "shortDescription": "¡Tus manos protegidas en todo momento, donde sea que estés! Vos disfrutá tu día que Rexona se encarga de los gérmenes",
+      "id": "-3bef0102-683f-5004-a790-6d2db418a633",
+      "images": [
+        {
+          "alt": "Envase de Alcohol en Gel Rexona Sin Perfume 300ml",
+          "asset": {
+            "url": "https://cdn.sanity.io/images/27438tds/rexona-staging-ar/b06f20ce0d5495bb830efc92774922499d2a44d7-5000x5000.tif?w=386&h=386&q=80&auto=format"
+          }
+        }
+      ],
+      "category": {
+        "_id": "4ddf279fad495146ed00ea00927f476210b08c2bc07bc2a88163fa1a",
+        "name": "Alcohol en Gel"
+      }
+    }
+  ]
+}

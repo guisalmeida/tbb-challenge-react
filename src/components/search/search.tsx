@@ -5,7 +5,6 @@ import SearchFilters from "../searchFilters/searchFilters";
 import Header from "../header/header";
 import SearchInput from "../searchInput/searchInput";
 
-import searchImage from "/images/search.svg";
 import filterIcon from "../../assets/filter-icon.svg";
 
 import productsData from "../../../productsCategory.json";
@@ -26,17 +25,14 @@ const Search = () => {
   }, []);
 
   return (
-    <section className="search__container">
-      <figure className="search__image">
-        <img src={searchImage} alt="A man searching with a glass" />
-      </figure>
-
+    <div className="search__container">
       <Header />
 
-      <section className="search-input--mobile">
+      <section className="search-input__container">
         <button
           className="search-input__button"
           onClick={() => setIsFiltersOpen(true)}
+          aria-label="Open Filters"
         >
           <img src={filterIcon} alt="Filter icon" />
         </button>
@@ -45,14 +41,12 @@ const Search = () => {
 
       <SearchFilters />
 
-      <main>
-        <div className="search-products__container">
-          {searchProducts.map((product) => {
-            return <ProductCard key={product.id} product={product} />;
-          })}
-        </div>
+      <main role="main" className="search-products__container">
+        {searchProducts.map((product) => {
+          return <ProductCard key={product.id} product={product} />;
+        })}
       </main>
-    </section>
+    </div>
   );
 };
 

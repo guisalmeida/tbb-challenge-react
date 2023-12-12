@@ -14,12 +14,12 @@ const Header = () => {
         <img src={searchImage} alt="A man searching with a glass" />
       </figure>
       <h1>
-        O que você <span>está procurando?</span>
+        O que você está <span>procurando?</span>
       </h1>
 
-      <section className="search-input--desktop">
+      <div className="search-header__input">
         <SearchInput />
-      </section>
+      </div>
 
       <div className="search-header__bottom">
         {categories.map((cat) => {

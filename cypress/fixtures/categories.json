@@ -1,0 +1,52 @@
+{
+  "categories": [
+    {
+      "name": "Favoritos",
+      "_id": "favoritos123",
+      "checked": false,
+      "quantity": 1
+    },
+    {
+      "name": "Roll On",
+      "_id": "88c47f2a01531fb5e5b25963d54e433becafd55ae72157e86256bf29",
+      "checked": false,
+      "quantity": 4
+    },
+    {
+      "name": "Alcohol en Gel",
+      "_id": "4ddf279fad495146ed00ea00927f476210b08c2bc07bc2a88163fa1a",
+      "checked": false,
+      "quantity": 3
+    },
+    {
+      "name": "Aerosol",
+      "_id": "bbf9aaa9b8d897480f9e0ade81c087843bf18590fa053eca43e6966e",
+      "checked": false,
+      "quantity": 12
+    },
+    {
+      "name": "Jabón Líquido",
+      "_id": "3b6358c4e18cf03b4f2a932ab184e2b39984d85f27d519f4633af7ab",
+      "checked": false,
+      "quantity": 2
+    },
+    {
+      "name": "Jabón Barra",
+      "_id": "67ce1f0eb28f56ed8a004be1d1443b02c66e987066cd73f21aa14681",
+      "checked": false,
+      "quantity": 8
+    },
+    {
+      "name": "Crema Soft Solid",
+      "_id": "18a8059abd42715c3b04f4f32b7b72ce58c2b06adf7ca605be54a17c",
+      "checked": false,
+      "quantity": 3
+    },
+    {
+      "name": "Talco",
+      "_id": "daeefa3ead07d87e55d9297ce21d7852f9eaa005295871d7416955e3",
+      "checked": false,
+      "quantity": 1
+    }
+  ]
+}
