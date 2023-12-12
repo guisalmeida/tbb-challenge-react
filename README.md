@@ -38,8 +38,10 @@ npm run dev
 ```
 
 
-### Todo (Upcoming Improvements)
+### Todo (Upcoming Improvements / Changelog)
 
+- [x] Category tags;
+- [x] Favorites category;
 - [x] E2E tests;
 - [x] Accessibility tests;
 - [ ] Component tests;
