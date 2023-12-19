@@ -48,4 +48,5 @@ npm run dev
 - [x] Accessibility tests;
 - [ ] Component tests;
 - [ ] Button "load more";
+- [ ] Search autocomplete;
 - [ ] Fixed filters when scrolling down;
